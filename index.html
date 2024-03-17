@@ -1,74 +1,106 @@
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>CSS Box Model</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nash Corp - We get it</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    div {
-      height: 300px;
-      width: 300px;
+    .feature-icon {
+      width: 30rem;
+      height: 3rem;
+      border-radius: .9rem;
     }
 
-    #a {
-      background-color: cornflowerblue;
-      border: 10px solid ;
-      margin-left: 10px;
+    .ql{
+      font-weight: bold;
     }
 
-    #b {
-      background-color: blanchedalmond;
-      border: 20px solid;
-      margin-left: 330px;
-    }
-
-    #c {
-      background-color: red;
-      border: 40px solid black;
-      margin-left: 670px;
-    }
-
-    #d {
-      background-color: blueviolet;
-      border: 80px solid black;
-      margin-left: 1050px;
-    }
-
-    #e {
-      background-color: blue;
-      border: 160px solid black;
-      margin-left: 1510px;
+    .ql2{
+      list-style: none;
     }
   </style>
 </head>
 
+
+<!--Navigation-->
 <body>
-  <div id="a">
-    <p>
-        Box one
-    </p>
+
+<div class="p-3 mb-2 bg-primary text-black">
+<!--Description of company-->
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-7 text-center text-lg-start">
+
+  <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-90">Nash Corp</h1>
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Who are we?</h1>
+      <p class="col-lg-10 fs-4">We're Nash Corp - we do software differently. Security solutions should serve your business however it needs, keeping it safe from any threat. Ask your IT deparment to give us a call. </p>
+    </div>
   </div>
-  <div id="b">
-    <p>
-        Box two
-    </p>
+</div>
+</div>
+<br>
+<br>
+<br>
+
+<!--Table-->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nash Corp</th>
+      <th scope="col">The Other Guys Inc</th>
+      <th scope="col">Disney-Blackrock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cybersecurity experts with experience</td>
+      <td>Terrible sevice</td>
+      <td>No experience</td>
+      
+    </tr>
+    <tr>
+      <td>Proprietary security software</td>
+      <td>Buggy software</td>
+      <td>Same old products</td>
+    </tr>
+    <tr>
+      <td>The most competitive prices</td>
+      <td>High prices</td>
+      <td>Too expensive</td>
+     
+      
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<br>
+<br>
+
+<!--Form for people interested-->
+
+<p class="col-lg-10 fs-4">Like what you see? Let us know below </p>
+
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
-  <div id="c">
-    <p>
-       Box three
-    </p>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Phone number</label>
+    <input type="text" class="form-control" id="exampleInputPassword1">
   </div>
-  <div id="d">
-    <p>
-       Box four
-    </p>
-  </div>
-  <div id="e">
-    <p>
-       Box five
-    </p>
-  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <br>
+  <br>
+  <br>
+
+
 </body>
 
 </html>
+
