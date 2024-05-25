@@ -10,9 +10,7 @@ To run the app, follow these steps in this order:
 
 1. Download the folder
 2. Change directory into the folder
-- If you have node already installed,\
-you can go to step 4
-3. Install node.js globally
+3. Install node.js globally (If you have node already installed, you can go to step 4. Steps 4 through 8 must be completed though, since the express packages are not in the repository)
 4. Run ``npm i express``
 5. Run ``sudo npm i -g nodemon``
 6. Run ``npm install axios``
