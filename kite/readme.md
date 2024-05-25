@@ -11,7 +11,6 @@ To run the app, follow these steps in this order:
 1. Download the folder
 2. Change directory into the folder
 - If you have node already installed,\
-as well as express, axios, and nodemon, \
 you can go to step 4
 3. Install node.js globally
 4. Run ``run npm i express``
