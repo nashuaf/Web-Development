@@ -17,3 +17,4 @@ you can go to step 4
 5. Run ``sudo npm i -g nodemon``
 6. Run ``npm install axios``
 7. Run ``nodemon express_server/index.js``
+8. Open a browser and go to http://localhost:3000
