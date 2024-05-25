@@ -1,0 +1,36 @@
+body {
+  background: url("../images/kites.jpg");
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  color: Cyan;
+  font-family: "Georgia", cursive;
+  font-size: 60px;
+  margin-bottom: 1px;
+}
+
+h3 {
+  color: Black;
+  font-family: "Georgia", cursive;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+form {
+    box-sizing: border-box;
+    font-family: "Arial";
+    padding: 2rem;
+    border-radius: .5rem;
+    background-color: blueviolet;
+    display: flex;
+    align: left;
+}
+
+label {
+  font-family: "Georgia";
+  font-size: 18px;
+  font-weight: bold;
+}

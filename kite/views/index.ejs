@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fly a Kite</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body>
+    <h1>Is it a good day to fly a kite?</h1>
+    <h3>At least 70 degrees Fahrenheit and 10 mph of wind</h3>
+    <button onclick="getLocation()" style="margin-bottom: 20px">Click Here or Enter Coordinates Below</button>
+
+    <script>
+    //Ask to get the users location
+    function getLocation() {
+      if (navigator.geolocation) {
+        //Use our function with the geolocation
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        window.error("No geolocation allowed");
+      }
+    }
+
+    function showPosition(position) {
+        //Get data from users location
+        const data = [position.coords.latitude, position.coords.longitude]
+
+        //Call API with location data
+        axios.get(`/apiCall`, { params: { data: data } })
+            .then(function(response) {
+               // If it's below 21.1 degrees celcius, or if winds are below 10 mph (shown here in m/s)
+               // send alert saying its not a good day
+               if((response.data.data[0].app_temp <= 21.1) || (response.data.data[0].wind_spd <= 4)){
+                   window.alert("It's not a good day to fly a kite in " + response.data.data[0].city_name)
+               }
+
+               //Otherwise, it's a good day
+               else{
+                   window.alert("It's a good day to fly a kite in " + response.data.data[0].city_name)
+               }
+            })
+            .catch(function(error) {
+                //If we get an error, tell them we can't use geolocation
+                window.alert("No geolocation allowed, try to manually enter location");
+            });
+    }
+    </script>
+    <!--This form allows users to manually input their location if we can't geolocate them-->
+    <form id="userLocationForm">
+        <label for="data">Latitude:</label>
+        <input type="text" id="lat" name="data">
+        <label for="data"> Longitude:</label>
+        <input type="text" id="lon" name="data">
+        <button type="submit" onclick="getData()">Submit</button>
+    </form>
+
+    <script>
+        //Prevent auto submitting form
+        event.preventDefault();
+        function getData(){
+             //Prevent auto submitting form
+             event.preventDefault();
+            const data = [document.getElementById('lat').value, document.getElementById('lon').value]
+
+            axios.get(`/apiCall`, { params: { data: data } })
+              .then(function(response) {
+                  // If it's below 21.1 degrees celsius, or if winds are below 10 mph (shown here in m/s)
+                  if((response.data.data[0].app_temp <= 21.1) || (response.data.data[0].wind_spd <= 4)){
+                      window.alert("It's not a good day to fly a kite in " + response.data.data[0].city_name)
+                  }
+                  //Otherwise, it's a good day
+                  else{
+                      window.alert("It's a good day to fly a kite in " + response.data.data[0].city_name)
+                  }
+              })
+              //If user gets error, either the coordinates are bad or they have run out of API requests
+              .catch(function(error) {
+                  window.alert("Coordinates are invalid. If error persists with valid coordinates, wait 24 hrs for API request limit to refresh, you may have made too many requests");
+              });
+        }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</body>
+
+</html>
+
