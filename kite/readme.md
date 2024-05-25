@@ -13,7 +13,7 @@ To run the app, follow these steps in this order:
 - If you have node already installed,\
 you can go to step 4
 3. Install node.js globally
-4. Run ``run npm i express``
+4. Run ``npm i express``
 5. Run ``sudo npm i -g nodemon``
 6. Run ``npm install axios``
 7. Run ``nodemon express_server/index.js``
